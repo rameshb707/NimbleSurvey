@@ -27,6 +27,20 @@ extension RequestType {
     }
 }
 
+enum APIParams {
+    case url([String:String])
+}
+
+extension APIParams {
+    
+    var asString: String {
+        switch self {
+        case let .url(parameter):
+            return parameter.asQueryString
+        }
+    }
+}
+
 extension Dictionary {
     
     // This computes the asString and appends as parameter for the baseurl to create the request
@@ -37,7 +51,7 @@ extension Dictionary {
             if !previous_query.isEmpty {
                 previous_query.append("&\(content.key)=\(content.value)")
             } else {
-                previous_query.append("\(content.key)=\(content.value)")
+                previous_query.append("?\(content.key)=\(content.value)")
             }
             return previous_query
         }

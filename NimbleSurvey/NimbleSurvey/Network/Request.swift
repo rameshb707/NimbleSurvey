@@ -10,24 +10,33 @@
 import Foundation
 
 protocol EndPoint {
-    var baseURL: String { get } 
+    var baseURL: String { get }
+    var parameters: APIParams? { get set} // Request Body/ Query Params
     var httpMethod: String { get }
     func getFullURL() -> String
+    var headers: String? { get set}
+
 }
 
 // MARK: - Contains supporting properties in order to construct the request.
 struct Request: EndPoint {
+    var parameters: APIParams?
+
     var endPoint: String
     
+    var headers: String?
+
+    var httpMethod: String
+
     var baseURL: String {
         return Constants.baseURL
     }
     
-    var httpMethod: String {
-        return RequestType.GET.method
-    }
     
     func getFullURL() -> String {
+        if let prameter = self.parameters {
+            return self.baseURL + endPoint + prameter.asString
+        }
         return self.baseURL + endPoint
     }
 }
