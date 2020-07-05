@@ -12,7 +12,7 @@ import Foundation
 protocol EndPoint {
     var baseURL: String { get }
     var parameters: APIParams? { get set} // Request Body/ Query Params
-    var httpMethod: String { get }
+    var httpMethod: RequestType { get set }
     func getFullURL() -> String
     var headers: String? { get set}
 
@@ -26,7 +26,7 @@ struct Request: EndPoint {
     
     var headers: String?
 
-    var httpMethod: String
+    var httpMethod: RequestType
 
     var baseURL: String {
         return Constants.baseURL

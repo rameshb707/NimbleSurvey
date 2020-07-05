@@ -13,9 +13,9 @@ extension URLRequest {
     
     init(request: Request) {
         self.init(url: URL.init(string: request.getFullURL())!)
-        httpMethod = request.httpMethod
+        httpMethod = request.httpMethod.method
         if let headerValue = request.headers {
-            self.setValue(headerValue, forHTTPHeaderField: "Authorization")
+            self.setValue(Constants.tokenType + headerValue, forHTTPHeaderField: "Authorization")
         }
     }
 }

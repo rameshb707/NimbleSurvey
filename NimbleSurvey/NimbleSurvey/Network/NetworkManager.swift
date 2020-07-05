@@ -11,7 +11,6 @@ import Foundation
 
 typealias resultCompletion = (T: Codable?, URLResponse?, Error?)
 
-
 /// All the network managers should conform to this Protocol
 protocol NetworkRequest: class {
     
@@ -65,6 +64,7 @@ class NetworkManager: NetworkRequest {
             }
             guard let productData = data else { completion((nil, nil, nil)); return; }
             do {
+                
                 let value = try JSONDecoder().decode(T.self, from: productData)
                 completion((value, nil, nil))
             } catch let err {
@@ -75,9 +75,7 @@ class NetworkManager: NetworkRequest {
     }
     
     func fetchList<T: Codable>(modelType: T.Type,_ request: Request, _ completion: @escaping (resultCompletion) -> Void) {
-        
         let dataRequest = URLRequest(request: request)
-
         let task = session.dataTask(with: dataRequest, completionHandler: {(data: Data?, response: URLResponse?, error: Error?) -> Void in
             if let err = error {
                 completion((nil, nil, err))

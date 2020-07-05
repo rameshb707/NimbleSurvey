@@ -13,6 +13,6 @@ struct Constants {
     static let baseURL: String = "https://nimble-survey-api.herokuapp.com"
     static let loginEndPoint: String = "/oauth/token"
     static let surveyEndPoint: String = "/surveys.json"
-
+    static let tokenType: String = "Bearer "
 }
 

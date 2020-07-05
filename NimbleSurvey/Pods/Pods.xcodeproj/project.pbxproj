@@ -3,19 +3,32 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		052A4CD01A5864BF7FE78CD29ED9CE0C /* Pods-NimbleSurveyTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FA40339B18054E4AD7C4AF1E5E5C36BD /* Pods-NimbleSurveyTests-dummy.m */; };
+		052A4CD01A5864BF7FE78CD29ED9CE0C /* Pods-NimbleSurveyTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E089C77F38000EB5A3E2144A12AFA043 /* Pods-NimbleSurveyTests-dummy.m */; };
+		0A1E9D786CA1040C50244F3427482C2C /* SwiftKeychainWrapper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B3B466543D0136EF0569F78B8714BD5 /* SwiftKeychainWrapper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0C0CC0DCAD36A28D6E5BAEB0CB5FD058 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		666367127B9162D1B5333A24AF44AA7C /* Pods-NimbleSurvey-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A29DEE7A3F0AD4BB50BD4BC4984C5D /* Pods-NimbleSurvey-dummy.m */; };
-		E5656D7FC18712D07CB7FA244ED952ED /* Pods-NimbleSurvey-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BCF7E2972C9546048C6ACB6F1340C84 /* Pods-NimbleSurvey-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EE7B1D9E1001250E77BC9D4764F6CD46 /* Pods-NimbleSurveyTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A6CCE0695B1FCA2D1E8DC3E80B2658F /* Pods-NimbleSurveyTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F311EFF3D2D16CA75FC98EFA5B98978C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		1BB72D35C1614D5955F927774DCC7C44 /* SwiftKeychainWrapper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 39CB52670D5E287383365AD5D149B552 /* SwiftKeychainWrapper-dummy.m */; };
+		35C7EB60E66E2814886504B822190484 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		3A246CB408E326D4798A114169A4D9E3 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2675545D4987FB499F4CCF8EB5B1473A /* KeychainWrapper.swift */; };
+		3E99C726D52CA4812D9B8AC14BB5904E /* Pods-NimbleSurvey-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7724F081D0E2E8F9C16A0F24CE2C0491 /* Pods-NimbleSurvey-dummy.m */; };
+		7BDEA58982AE38EC64F549D981FD45E6 /* SwiftKeychainWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = CD9EC5BE35D80DA379BAE89F42C7B404 /* SwiftKeychainWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		853500B973255E0957451456FAAD6E31 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95220BABEC025B8A87456858A42BE1B8 /* KeychainItemAccessibility.swift */; };
+		C925B46E1F8DE0AF39246ACF62A02FCB /* Pods-NimbleSurvey-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 579247A3F3E025869D6B58BF9331B9D2 /* Pods-NimbleSurvey-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD337F074BF0373BB3EC32424CA1E601 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		EE7B1D9E1001250E77BC9D4764F6CD46 /* Pods-NimbleSurveyTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 18B038F77D6E3ED0C9875DD9B153322D /* Pods-NimbleSurveyTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		628775613216C9E233B9F443ECB7EA91 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF903DF43E111410ECA0C288D36FA21A;
+			remoteInfo = SwiftKeychainWrapper;
+		};
 		F2464F0F3D9483ED889EF6FDD3791FC7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
@@ -26,26 +39,38 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1DF2A832D0CE5A71B32AD8D3B625353E /* Pods-NimbleSurvey-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NimbleSurvey-Info.plist"; sourceTree = "<group>"; };
-		268392190FC96B2D3002B7206F51895F /* Pods-NimbleSurveyTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-NimbleSurveyTests.modulemap"; sourceTree = "<group>"; };
+		15A3043BFF3ABD304C3A054A11625DEB /* Pods-NimbleSurvey.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-NimbleSurvey.modulemap"; sourceTree = "<group>"; };
+		18B038F77D6E3ED0C9875DD9B153322D /* Pods-NimbleSurveyTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NimbleSurveyTests-umbrella.h"; sourceTree = "<group>"; };
+		1B3B466543D0136EF0569F78B8714BD5 /* SwiftKeychainWrapper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftKeychainWrapper-umbrella.h"; sourceTree = "<group>"; };
+		245A4E757EA48047DA06254CBD9BDBB6 /* Pods-NimbleSurvey-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NimbleSurvey-frameworks.sh"; sourceTree = "<group>"; };
+		2675545D4987FB499F4CCF8EB5B1473A /* KeychainWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeychainWrapper.swift; path = SwiftKeychainWrapper/KeychainWrapper.swift; sourceTree = "<group>"; };
+		2BB52D4726B59BE312EAADC6541D01C5 /* Pods-NimbleSurveyTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NimbleSurveyTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		2F79C1AFC772282142867AC0339C7E62 /* Pods-NimbleSurveyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NimbleSurveyTests.release.xcconfig"; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		3A6CCE0695B1FCA2D1E8DC3E80B2658F /* Pods-NimbleSurveyTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NimbleSurveyTests-umbrella.h"; sourceTree = "<group>"; };
+		39CB52670D5E287383365AD5D149B552 /* SwiftKeychainWrapper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftKeychainWrapper-dummy.m"; sourceTree = "<group>"; };
 		3C752A5793A00376A7EF19EE07931AB7 /* Pods_NimbleSurveyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_NimbleSurveyTests.framework; path = "Pods-NimbleSurveyTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		50B207AA4383A5FE77232C63D4E1CD2B /* Pods-NimbleSurveyTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NimbleSurveyTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		542D8B35CD3104D11CB1597B01C189EF /* Pods-NimbleSurvey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NimbleSurvey.release.xcconfig"; sourceTree = "<group>"; };
+		3F88844FB224E4406B5BF86B966E864E /* SwiftKeychainWrapper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftKeychainWrapper.modulemap; sourceTree = "<group>"; };
+		5069D199AB328CCD047E61C632CD7C32 /* SwiftKeychainWrapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftKeychainWrapper.framework; path = SwiftKeychainWrapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		579247A3F3E025869D6B58BF9331B9D2 /* Pods-NimbleSurvey-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NimbleSurvey-umbrella.h"; sourceTree = "<group>"; };
+		5BE7D72479C066F1D4BEF0DB510DCC4C /* Pods-NimbleSurveyTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NimbleSurveyTests-Info.plist"; sourceTree = "<group>"; };
 		61687D801667BF4E6546BDF0A302CEA7 /* Pods_NimbleSurvey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_NimbleSurvey.framework; path = "Pods-NimbleSurvey.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6456A95D25D9F14B4317AEE524C694FB /* Pods-NimbleSurveyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NimbleSurveyTests.debug.xcconfig"; sourceTree = "<group>"; };
-		68C25BA9CE906FB0197AD265FED143CE /* Pods-NimbleSurvey.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-NimbleSurvey.modulemap"; sourceTree = "<group>"; };
-		6ECFF91A61BB9E6067DA2B564C399A39 /* Pods-NimbleSurvey-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NimbleSurvey-acknowledgements.markdown"; sourceTree = "<group>"; };
-		7BCF7E2972C9546048C6ACB6F1340C84 /* Pods-NimbleSurvey-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NimbleSurvey-umbrella.h"; sourceTree = "<group>"; };
-		8AEC00AAC7D298BA12CF57B9D2B51B38 /* Pods-NimbleSurvey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NimbleSurvey.debug.xcconfig"; sourceTree = "<group>"; };
-		9602A0641D51FAFF1C2F4598C1B4FA32 /* Pods-NimbleSurveyTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NimbleSurveyTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		662659BCEDC42893F7D2A1702018DA0C /* Pods-NimbleSurveyTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-NimbleSurveyTests.modulemap"; sourceTree = "<group>"; };
+		668560131D930DD44787A189F54BE854 /* Pods-NimbleSurvey-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NimbleSurvey-Info.plist"; sourceTree = "<group>"; };
+		7724F081D0E2E8F9C16A0F24CE2C0491 /* Pods-NimbleSurvey-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NimbleSurvey-dummy.m"; sourceTree = "<group>"; };
+		79E3646D269BE0281943E01E772A8F0B /* SwiftKeychainWrapper-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftKeychainWrapper-Info.plist"; sourceTree = "<group>"; };
+		7FE0BE4C936FEC13AC1CA100674E6818 /* SwiftKeychainWrapper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftKeychainWrapper.debug.xcconfig; sourceTree = "<group>"; };
+		95220BABEC025B8A87456858A42BE1B8 /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeychainItemAccessibility.swift; path = SwiftKeychainWrapper/KeychainItemAccessibility.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A5A29DEE7A3F0AD4BB50BD4BC4984C5D /* Pods-NimbleSurvey-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NimbleSurvey-dummy.m"; sourceTree = "<group>"; };
-		B99DBE96039F39DAA9E1BBD06E517614 /* Pods-NimbleSurveyTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NimbleSurveyTests-Info.plist"; sourceTree = "<group>"; };
-		C0F01BDAE8CC8E7EFE6B1F3FB9D76F89 /* Pods-NimbleSurvey-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NimbleSurvey-acknowledgements.plist"; sourceTree = "<group>"; };
-		DDC9C6AFFF3654450C249546634051BB /* Pods-NimbleSurveyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NimbleSurveyTests.release.xcconfig"; sourceTree = "<group>"; };
-		FA40339B18054E4AD7C4AF1E5E5C36BD /* Pods-NimbleSurveyTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NimbleSurveyTests-dummy.m"; sourceTree = "<group>"; };
+		A3B0C60471EB6B9CF0544DC59CA2CB88 /* Pods-NimbleSurvey-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NimbleSurvey-acknowledgements.plist"; sourceTree = "<group>"; };
+		AA64388291E5579B48BDB765C3DBA076 /* SwiftKeychainWrapper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftKeychainWrapper-prefix.pch"; sourceTree = "<group>"; };
+		AE3EFC5991B987D6D1A058263E2460E9 /* SwiftKeychainWrapper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftKeychainWrapper.release.xcconfig; sourceTree = "<group>"; };
+		BF5B9FD2ACCC02630F97CF35E18A46C6 /* Pods-NimbleSurveyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NimbleSurveyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CCCE91E30DDDA6789948F76F0658DC6C /* Pods-NimbleSurvey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NimbleSurvey.debug.xcconfig"; sourceTree = "<group>"; };
+		CD9EC5BE35D80DA379BAE89F42C7B404 /* SwiftKeychainWrapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SwiftKeychainWrapper.h; path = SwiftKeychainWrapper/SwiftKeychainWrapper.h; sourceTree = "<group>"; };
+		DC84218A56C7EC4AB48C04847B3224D5 /* Pods-NimbleSurveyTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NimbleSurveyTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		DF63098E793697947F81D7438E20B89C /* Pods-NimbleSurvey-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NimbleSurvey-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E089C77F38000EB5A3E2144A12AFA043 /* Pods-NimbleSurveyTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NimbleSurveyTests-dummy.m"; sourceTree = "<group>"; };
+		EE3979C01C89E4FC151173F22F05F244 /* Pods-NimbleSurvey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NimbleSurvey.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,49 +82,83 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BDA7636EDF4E6524A7C391E345093E83 /* Frameworks */ = {
+		75E8DA227B33D4EE5CA1FC321B3B14F4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F311EFF3D2D16CA75FC98EFA5B98978C /* Foundation.framework in Frameworks */,
+				CD337F074BF0373BB3EC32424CA1E601 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D44BE32F0F2A099860CD3EA3E14F13E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35C7EB60E66E2814886504B822190484 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		350581235681FD5117648D118F0B3FB4 /* Pods-NimbleSurvey */ = {
+		300BE541973B1C2AB6529336C278BC5E /* Pods-NimbleSurvey */ = {
 			isa = PBXGroup;
 			children = (
-				68C25BA9CE906FB0197AD265FED143CE /* Pods-NimbleSurvey.modulemap */,
-				6ECFF91A61BB9E6067DA2B564C399A39 /* Pods-NimbleSurvey-acknowledgements.markdown */,
-				C0F01BDAE8CC8E7EFE6B1F3FB9D76F89 /* Pods-NimbleSurvey-acknowledgements.plist */,
-				A5A29DEE7A3F0AD4BB50BD4BC4984C5D /* Pods-NimbleSurvey-dummy.m */,
-				1DF2A832D0CE5A71B32AD8D3B625353E /* Pods-NimbleSurvey-Info.plist */,
-				7BCF7E2972C9546048C6ACB6F1340C84 /* Pods-NimbleSurvey-umbrella.h */,
-				8AEC00AAC7D298BA12CF57B9D2B51B38 /* Pods-NimbleSurvey.debug.xcconfig */,
-				542D8B35CD3104D11CB1597B01C189EF /* Pods-NimbleSurvey.release.xcconfig */,
+				15A3043BFF3ABD304C3A054A11625DEB /* Pods-NimbleSurvey.modulemap */,
+				DF63098E793697947F81D7438E20B89C /* Pods-NimbleSurvey-acknowledgements.markdown */,
+				A3B0C60471EB6B9CF0544DC59CA2CB88 /* Pods-NimbleSurvey-acknowledgements.plist */,
+				7724F081D0E2E8F9C16A0F24CE2C0491 /* Pods-NimbleSurvey-dummy.m */,
+				245A4E757EA48047DA06254CBD9BDBB6 /* Pods-NimbleSurvey-frameworks.sh */,
+				668560131D930DD44787A189F54BE854 /* Pods-NimbleSurvey-Info.plist */,
+				579247A3F3E025869D6B58BF9331B9D2 /* Pods-NimbleSurvey-umbrella.h */,
+				CCCE91E30DDDA6789948F76F0658DC6C /* Pods-NimbleSurvey.debug.xcconfig */,
+				EE3979C01C89E4FC151173F22F05F244 /* Pods-NimbleSurvey.release.xcconfig */,
 			);
 			name = "Pods-NimbleSurvey";
 			path = "Target Support Files/Pods-NimbleSurvey";
 			sourceTree = "<group>";
 		};
-		3E2A6FE1D2EA8F00F2EDDEA5EA343DAE /* Products */ = {
+		8E7C18A276CC1B95B5DDB903FC2B8FAD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EA4FEE4EBF36BDDE60622669030E2F85 /* SwiftKeychainWrapper */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A69D97F490C96579A6F66FB02A654D23 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				61687D801667BF4E6546BDF0A302CEA7 /* Pods_NimbleSurvey.framework */,
 				3C752A5793A00376A7EF19EE07931AB7 /* Pods_NimbleSurveyTests.framework */,
+				5069D199AB328CCD047E61C632CD7C32 /* SwiftKeychainWrapper.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		58D29419ACC6C41C9657169DE160B49B /* Targets Support Files */ = {
+		B485B1A1C1CE0A2A450B2B6DE8D55291 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				350581235681FD5117648D118F0B3FB4 /* Pods-NimbleSurvey */,
-				ED1C0FD76CD6454715B06CCC90D758BD /* Pods-NimbleSurveyTests */,
+				300BE541973B1C2AB6529336C278BC5E /* Pods-NimbleSurvey */,
+				BA7529CAFD43CCCB0B2B889E43E29E9D /* Pods-NimbleSurveyTests */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		BA7529CAFD43CCCB0B2B889E43E29E9D /* Pods-NimbleSurveyTests */ = {
+			isa = PBXGroup;
+			children = (
+				662659BCEDC42893F7D2A1702018DA0C /* Pods-NimbleSurveyTests.modulemap */,
+				2BB52D4726B59BE312EAADC6541D01C5 /* Pods-NimbleSurveyTests-acknowledgements.markdown */,
+				DC84218A56C7EC4AB48C04847B3224D5 /* Pods-NimbleSurveyTests-acknowledgements.plist */,
+				E089C77F38000EB5A3E2144A12AFA043 /* Pods-NimbleSurveyTests-dummy.m */,
+				5BE7D72479C066F1D4BEF0DB510DCC4C /* Pods-NimbleSurveyTests-Info.plist */,
+				18B038F77D6E3ED0C9875DD9B153322D /* Pods-NimbleSurveyTests-umbrella.h */,
+				BF5B9FD2ACCC02630F97CF35E18A46C6 /* Pods-NimbleSurveyTests.debug.xcconfig */,
+				2F79C1AFC772282142867AC0339C7E62 /* Pods-NimbleSurveyTests.release.xcconfig */,
+			);
+			name = "Pods-NimbleSurveyTests";
+			path = "Target Support Files/Pods-NimbleSurveyTests";
 			sourceTree = "<group>";
 		};
 		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
@@ -115,8 +174,9 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				3E2A6FE1D2EA8F00F2EDDEA5EA343DAE /* Products */,
-				58D29419ACC6C41C9657169DE160B49B /* Targets Support Files */,
+				8E7C18A276CC1B95B5DDB903FC2B8FAD /* Pods */,
+				A69D97F490C96579A6F66FB02A654D23 /* Products */,
+				B485B1A1C1CE0A2A450B2B6DE8D55291 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,38 +188,58 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		ED1C0FD76CD6454715B06CCC90D758BD /* Pods-NimbleSurveyTests */ = {
+		E0FF2DA979E642849BEB61BBC4572A77 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				268392190FC96B2D3002B7206F51895F /* Pods-NimbleSurveyTests.modulemap */,
-				50B207AA4383A5FE77232C63D4E1CD2B /* Pods-NimbleSurveyTests-acknowledgements.markdown */,
-				9602A0641D51FAFF1C2F4598C1B4FA32 /* Pods-NimbleSurveyTests-acknowledgements.plist */,
-				FA40339B18054E4AD7C4AF1E5E5C36BD /* Pods-NimbleSurveyTests-dummy.m */,
-				B99DBE96039F39DAA9E1BBD06E517614 /* Pods-NimbleSurveyTests-Info.plist */,
-				3A6CCE0695B1FCA2D1E8DC3E80B2658F /* Pods-NimbleSurveyTests-umbrella.h */,
-				6456A95D25D9F14B4317AEE524C694FB /* Pods-NimbleSurveyTests.debug.xcconfig */,
-				DDC9C6AFFF3654450C249546634051BB /* Pods-NimbleSurveyTests.release.xcconfig */,
+				3F88844FB224E4406B5BF86B966E864E /* SwiftKeychainWrapper.modulemap */,
+				39CB52670D5E287383365AD5D149B552 /* SwiftKeychainWrapper-dummy.m */,
+				79E3646D269BE0281943E01E772A8F0B /* SwiftKeychainWrapper-Info.plist */,
+				AA64388291E5579B48BDB765C3DBA076 /* SwiftKeychainWrapper-prefix.pch */,
+				1B3B466543D0136EF0569F78B8714BD5 /* SwiftKeychainWrapper-umbrella.h */,
+				7FE0BE4C936FEC13AC1CA100674E6818 /* SwiftKeychainWrapper.debug.xcconfig */,
+				AE3EFC5991B987D6D1A058263E2460E9 /* SwiftKeychainWrapper.release.xcconfig */,
 			);
-			name = "Pods-NimbleSurveyTests";
-			path = "Target Support Files/Pods-NimbleSurveyTests";
+			name = "Support Files";
+			path = "../Target Support Files/SwiftKeychainWrapper";
+			sourceTree = "<group>";
+		};
+		EA4FEE4EBF36BDDE60622669030E2F85 /* SwiftKeychainWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				95220BABEC025B8A87456858A42BE1B8 /* KeychainItemAccessibility.swift */,
+				2675545D4987FB499F4CCF8EB5B1473A /* KeychainWrapper.swift */,
+				CD9EC5BE35D80DA379BAE89F42C7B404 /* SwiftKeychainWrapper.h */,
+				E0FF2DA979E642849BEB61BBC4572A77 /* Support Files */,
+			);
+			name = SwiftKeychainWrapper;
+			path = SwiftKeychainWrapper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		19C0787D6C85E51DCBA2DFA6C009A9EA /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E5656D7FC18712D07CB7FA244ED952ED /* Pods-NimbleSurvey-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C406F24C54D10B099B50555F0AE4AD6E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				EE7B1D9E1001250E77BC9D4764F6CD46 /* Pods-NimbleSurveyTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6FAC5979772836E3555FF451EF11C5F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C925B46E1F8DE0AF39246ACF62A02FCB /* Pods-NimbleSurvey-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E46D83F0CD00CB6C581A15FACBBDB57E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A1E9D786CA1040C50244F3427482C2C /* SwiftKeychainWrapper-umbrella.h in Headers */,
+				7BDEA58982AE38EC64F549D981FD45E6 /* SwiftKeychainWrapper.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,20 +267,39 @@
 		};
 		B121953895DF47F42C0CE9396A219953 /* Pods-NimbleSurvey */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FF030DBF90C7526B55F7C7A505866B09 /* Build configuration list for PBXNativeTarget "Pods-NimbleSurvey" */;
+			buildConfigurationList = 62DACDB67B94A15F67B759DB26F2EB76 /* Build configuration list for PBXNativeTarget "Pods-NimbleSurvey" */;
 			buildPhases = (
-				19C0787D6C85E51DCBA2DFA6C009A9EA /* Headers */,
-				C5994534840A36AD6F8B2D25C5D6FCC9 /* Sources */,
-				BDA7636EDF4E6524A7C391E345093E83 /* Frameworks */,
-				C4B64953F811DB3D112A91F4AD3B8ABC /* Resources */,
+				D6FAC5979772836E3555FF451EF11C5F /* Headers */,
+				8F136B2D928C216C3D7914389CA2D386 /* Sources */,
+				75E8DA227B33D4EE5CA1FC321B3B14F4 /* Frameworks */,
+				802BB24FA20968D0AE1E1805E2F275CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3D6FAA273229020AE983AB454551905F /* PBXTargetDependency */,
+			);
+			name = "Pods-NimbleSurvey";
+			productName = "Pods-NimbleSurvey";
+			productReference = 61687D801667BF4E6546BDF0A302CEA7 /* Pods_NimbleSurvey.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CF903DF43E111410ECA0C288D36FA21A /* SwiftKeychainWrapper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 97C26D1F56B79A699BC4DE26433A422F /* Build configuration list for PBXNativeTarget "SwiftKeychainWrapper" */;
+			buildPhases = (
+				E46D83F0CD00CB6C581A15FACBBDB57E /* Headers */,
+				330DE2BD20DFC08839359EADFE5BBCF0 /* Sources */,
+				D44BE32F0F2A099860CD3EA3E14F13E2 /* Frameworks */,
+				BBE4D27BCC51B5E2A3D3C5FFE924AA40 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Pods-NimbleSurvey";
-			productName = "Pods-NimbleSurvey";
-			productReference = 61687D801667BF4E6546BDF0A302CEA7 /* Pods_NimbleSurvey.framework */;
+			name = SwiftKeychainWrapper;
+			productName = SwiftKeychainWrapper;
+			productReference = 5069D199AB328CCD047E61C632CD7C32 /* SwiftKeychainWrapper.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -213,7 +312,7 @@
 				LastUpgradeCheck = 1100;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -221,18 +320,26 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 3E2A6FE1D2EA8F00F2EDDEA5EA343DAE /* Products */;
+			productRefGroup = A69D97F490C96579A6F66FB02A654D23 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				B121953895DF47F42C0CE9396A219953 /* Pods-NimbleSurvey */,
 				585302C09F01CFAF4695D8A4674BA517 /* Pods-NimbleSurveyTests */,
+				CF903DF43E111410ECA0C288D36FA21A /* SwiftKeychainWrapper */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		C4B64953F811DB3D112A91F4AD3B8ABC /* Resources */ = {
+		802BB24FA20968D0AE1E1805E2F275CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBE4D27BCC51B5E2A3D3C5FFE924AA40 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -249,11 +356,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C5994534840A36AD6F8B2D25C5D6FCC9 /* Sources */ = {
+		330DE2BD20DFC08839359EADFE5BBCF0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				666367127B9162D1B5333A24AF44AA7C /* Pods-NimbleSurvey-dummy.m in Sources */,
+				853500B973255E0957451456FAAD6E31 /* KeychainItemAccessibility.swift in Sources */,
+				3A246CB408E326D4798A114169A4D9E3 /* KeychainWrapper.swift in Sources */,
+				1BB72D35C1614D5955F927774DCC7C44 /* SwiftKeychainWrapper-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F136B2D928C216C3D7914389CA2D386 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E99C726D52CA4812D9B8AC14BB5904E /* Pods-NimbleSurvey-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +385,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		3D6FAA273229020AE983AB454551905F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftKeychainWrapper;
+			target = CF903DF43E111410ECA0C288D36FA21A /* SwiftKeychainWrapper */;
+			targetProxy = 628775613216C9E233B9F443ECB7EA91 /* PBXContainerItemProxy */;
+		};
 		44598A4A22EA80EC4849463165D25614 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-NimbleSurvey";
@@ -277,161 +400,7 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		26903B11D3EC5374B7BB08726C1D5606 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 542D8B35CD3104D11CB1597B01C189EF /* Pods-NimbleSurvey.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-NimbleSurvey/Pods-NimbleSurvey-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-NimbleSurvey/Pods-NimbleSurvey.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		51FC281AC949807FE249C70F748BADC2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8AEC00AAC7D298BA12CF57B9D2B51B38 /* Pods-NimbleSurvey.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-NimbleSurvey/Pods-NimbleSurvey-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-NimbleSurvey/Pods-NimbleSurvey.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		B3165D9DEFF7CFA3055AB07F128F505C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DDC9C6AFFF3654450C249546634051BB /* Pods-NimbleSurveyTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-NimbleSurveyTests/Pods-NimbleSurveyTests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-NimbleSurveyTests/Pods-NimbleSurveyTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		CF05BB340845CD23EFE569B0A082F83B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6456A95D25D9F14B4317AEE524C694FB /* Pods-NimbleSurveyTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-NimbleSurveyTests/Pods-NimbleSurveyTests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-NimbleSurveyTests/Pods-NimbleSurveyTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		DFD9D19FEEBF98DE271D7FBABCB845B5 /* Debug */ = {
+		196DFA3E4A09A28224918543529A1885 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -482,7 +451,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -495,7 +464,232 @@
 			};
 			name = Debug;
 		};
-		F5F04600F5626DC980F02790D1ED2C19 /* Release */ = {
+		216B727892807620805BAC4C7B8F2877 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CCCE91E30DDDA6789948F76F0658DC6C /* Pods-NimbleSurvey.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-NimbleSurvey/Pods-NimbleSurvey-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-NimbleSurvey/Pods-NimbleSurvey.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3AEF23F1AAAA11839C38A99CCEEEDBDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F79C1AFC772282142867AC0339C7E62 /* Pods-NimbleSurveyTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-NimbleSurveyTests/Pods-NimbleSurveyTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-NimbleSurveyTests/Pods-NimbleSurveyTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		47485F670F7681950C46C12AC23100BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FE0BE4C936FEC13AC1CA100674E6818 /* SwiftKeychainWrapper.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftKeychainWrapper/SwiftKeychainWrapper-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftKeychainWrapper/SwiftKeychainWrapper-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftKeychainWrapper/SwiftKeychainWrapper.modulemap";
+				PRODUCT_MODULE_NAME = SwiftKeychainWrapper;
+				PRODUCT_NAME = SwiftKeychainWrapper;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		74C4314AC98C3A89C47F294B605422CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE3EFC5991B987D6D1A058263E2460E9 /* SwiftKeychainWrapper.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftKeychainWrapper/SwiftKeychainWrapper-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftKeychainWrapper/SwiftKeychainWrapper-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftKeychainWrapper/SwiftKeychainWrapper.modulemap";
+				PRODUCT_MODULE_NAME = SwiftKeychainWrapper;
+				PRODUCT_NAME = SwiftKeychainWrapper;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7AF23C737C66DF468CEBE46B53A0F4DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE3979C01C89E4FC151173F22F05F244 /* Pods-NimbleSurvey.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-NimbleSurvey/Pods-NimbleSurvey-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-NimbleSurvey/Pods-NimbleSurvey.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A8D52F21D2AF169EA98D44E9A7AE9160 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF5B9FD2ACCC02630F97CF35E18A46C6 /* Pods-NimbleSurveyTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-NimbleSurveyTests/Pods-NimbleSurveyTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-NimbleSurveyTests/Pods-NimbleSurveyTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B01D14FDC83DCF9D4BE53066BEA96D05 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -543,7 +737,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -561,8 +755,26 @@
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DFD9D19FEEBF98DE271D7FBABCB845B5 /* Debug */,
-				F5F04600F5626DC980F02790D1ED2C19 /* Release */,
+				196DFA3E4A09A28224918543529A1885 /* Debug */,
+				B01D14FDC83DCF9D4BE53066BEA96D05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		62DACDB67B94A15F67B759DB26F2EB76 /* Build configuration list for PBXNativeTarget "Pods-NimbleSurvey" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				216B727892807620805BAC4C7B8F2877 /* Debug */,
+				7AF23C737C66DF468CEBE46B53A0F4DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		97C26D1F56B79A699BC4DE26433A422F /* Build configuration list for PBXNativeTarget "SwiftKeychainWrapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47485F670F7681950C46C12AC23100BC /* Debug */,
+				74C4314AC98C3A89C47F294B605422CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -570,17 +782,8 @@
 		D9198C2C115EE63B343EDF7A08B6E185 /* Build configuration list for PBXNativeTarget "Pods-NimbleSurveyTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CF05BB340845CD23EFE569B0A082F83B /* Debug */,
-				B3165D9DEFF7CFA3055AB07F128F505C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FF030DBF90C7526B55F7C7A505866B09 /* Build configuration list for PBXNativeTarget "Pods-NimbleSurvey" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				51FC281AC949807FE249C70F748BADC2 /* Debug */,
-				26903B11D3EC5374B7BB08726C1D5606 /* Release */,
+				A8D52F21D2AF169EA98D44E9A7AE9160 /* Debug */,
+				3AEF23F1AAAA11839C38A99CCEEEDBDC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
