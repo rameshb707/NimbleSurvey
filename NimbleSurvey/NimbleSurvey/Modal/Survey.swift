@@ -9,9 +9,9 @@
 import Foundation
 
 class Survey: Codable {
-    var id: String
-    var title: String
-    var description: String
-    var cover_image_url: String
+    var id: String?
+    var title: String?
+    var description: String?
+    var cover_image_url: String?
 }
 

@@ -14,5 +14,10 @@ struct Constants {
     static let loginEndPoint: String = "/oauth/token"
     static let surveyEndPoint: String = "/surveys.json"
     static let tokenType: String = "Bearer "
+    static let accessTokenKey: String = "NimbleAccessToken"
+    static let indexTableViewHeight: CGFloat = 20
+    static let tableViewFootterHeight: CGFloat = 5
+    static let itemsPerPage: Int = 10
+
 }
 

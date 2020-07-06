@@ -14,6 +14,9 @@
 		4C8C315324B0838900C17417 /* NimbleSurveyConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8C315224B0838900C17417 /* NimbleSurveyConfigurator.swift */; };
 		4C8C315524B0876700C17417 /* NimbleSurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8C315424B0876700C17417 /* NimbleSurveyViewController.swift */; };
 		4C8C315724B167B400C17417 /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8C315624B167B400C17417 /* KeyChainManager.swift */; };
+		4CE61BDC24B1DB24005CB41F /* NimbleSurveyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE61BDA24B1DB24005CB41F /* NimbleSurveyCollectionViewCell.swift */; };
+		4CE61BDD24B1DB24005CB41F /* NimbleSurveyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CE61BDB24B1DB24005CB41F /* NimbleSurveyCollectionViewCell.xib */; };
+		4CE61BDF24B1DD5F005CB41F /* NimbleCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE61BDE24B1DD5F005CB41F /* NimbleCustomButton.swift */; };
 		4CEDA01324AEEA3B0012C2C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDA01224AEEA3B0012C2C0 /* AppDelegate.swift */; };
 		4CEDA01A24AEEA3B0012C2C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CEDA01824AEEA3B0012C2C0 /* Main.storyboard */; };
 		4CEDA01C24AEEA3E0012C2C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CEDA01B24AEEA3E0012C2C0 /* Assets.xcassets */; };
@@ -50,6 +53,10 @@
 		4C8C315224B0838900C17417 /* NimbleSurveyConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NimbleSurveyConfigurator.swift; sourceTree = "<group>"; };
 		4C8C315424B0876700C17417 /* NimbleSurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NimbleSurveyViewController.swift; sourceTree = "<group>"; };
 		4C8C315624B167B400C17417 /* KeyChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
+		4CAFE30024B2DB6600E3F182 /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CE61BDA24B1DB24005CB41F /* NimbleSurveyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NimbleSurveyCollectionViewCell.swift; sourceTree = "<group>"; };
+		4CE61BDB24B1DB24005CB41F /* NimbleSurveyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NimbleSurveyCollectionViewCell.xib; sourceTree = "<group>"; };
+		4CE61BDE24B1DD5F005CB41F /* NimbleCustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NimbleCustomButton.swift; sourceTree = "<group>"; };
 		4CEDA00F24AEEA3B0012C2C0 /* NimbleSurvey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NimbleSurvey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CEDA01224AEEA3B0012C2C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CEDA01924AEEA3B0012C2C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -91,6 +98,7 @@
 		044C19DBCB350323E0BD037A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4CAFE30024B2DB6600E3F182 /* Kingfisher.framework */,
 				CF9D57C85E9C0445BB275C59 /* Pods_NimbleSurvey.framework */,
 				997296296022810E969C04D8 /* Pods_NimbleSurveyTests.framework */,
 			);
@@ -120,7 +128,8 @@
 		4C8C314624B080EA00C17417 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4C8C315424B0876700C17417 /* NimbleSurveyViewController.swift */,
+				4CE61BDA24B1DB24005CB41F /* NimbleSurveyCollectionViewCell.swift */,
+				4CE61BDB24B1DB24005CB41F /* NimbleSurveyCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -156,6 +165,14 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		4C8C315824B1D96000C17417 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4C8C315424B0876700C17417 /* NimbleSurveyViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		4CEDA00624AEEA3B0012C2C0 = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +196,7 @@
 		4CEDA01124AEEA3B0012C2C0 /* NimbleSurvey */ = {
 			isa = PBXGroup;
 			children = (
+				4C8C315824B1D96000C17417 /* ViewController */,
 				4C8C314B24B0815F00C17417 /* Router */,
 				4C8C314A24B0812F00C17417 /* Configurator */,
 				4C8C314824B0811200C17417 /* Presenter */,
@@ -210,6 +228,7 @@
 			children = (
 				4CEDA03E24AEF1CE0012C2C0 /* Constants.swift */,
 				4C8C315624B167B400C17417 /* KeyChainManager.swift */,
+				4CE61BDE24B1DD5F005CB41F /* NimbleCustomButton.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -312,6 +331,7 @@
 				4CEDA01F24AEEA3E0012C2C0 /* LaunchScreen.storyboard in Resources */,
 				4CEDA01C24AEEA3E0012C2C0 /* Assets.xcassets in Resources */,
 				4CEDA01A24AEEA3B0012C2C0 /* Main.storyboard in Resources */,
+				4CE61BDD24B1DB24005CB41F /* NimbleSurveyCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,8 +424,10 @@
 				4CEDA04724AF02420012C2C0 /* URLRequestExtension.swift in Sources */,
 				4C8C314524AF136300C17417 /* Survey.swift in Sources */,
 				4C8C315324B0838900C17417 /* NimbleSurveyConfigurator.swift in Sources */,
+				4CE61BDC24B1DB24005CB41F /* NimbleSurveyCollectionViewCell.swift in Sources */,
 				4CEDA03F24AEF1CE0012C2C0 /* Constants.swift in Sources */,
 				4CEDA04824AF02420012C2C0 /* RequestType.swift in Sources */,
+				4CE61BDF24B1DD5F005CB41F /* NimbleCustomButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,13 +589,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 84HC2LY5TA;
 				INFOPLIST_FILE = NimbleSurvey/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ramesh.nimble.NimbleSurvey;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.examroom.360;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -586,13 +609,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 84HC2LY5TA;
 				INFOPLIST_FILE = NimbleSurvey/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ramesh.nimble.NimbleSurvey;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.examroom.360;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

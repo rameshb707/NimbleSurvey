@@ -12,6 +12,9 @@ import UIKit
 
 protocol NimbleSurveyInteractorInterface: class {
     func getSurveyList()
+    func getNextPage()
+    func getRefreshData()
+    func getPreviousPageSurveyList()
 }
 
 /// - Interactor which handles all the  bussiness logic and based on user interaction with view presenter ask interactor and interactor guides worker and reply back presneter to perform there duties
@@ -22,9 +25,18 @@ protocol NimbleSurveyInteractorInterface: class {
 final class NimbleSurveyInteractor: NimbleSurveyInteractorInterface {
     
     weak var presenter: NimbelSurveyPresenterInterface!
+    private var paginationIndex: Int = 1
+    private var surveyListInPage: [(Int, [Survey])]  = [(Int, [Survey])]()
+    private var fetchingNextPage: Bool = false
     var surveyList: [Survey] = [Survey]() {
         didSet {
-            self.presenter.getSurvey()
+            if !surveyList.isEmpty {
+                surveyListInPage.append((self.paginationIndex, surveyList))
+                self.presenter.presentSurveyList(pageNumber: paginationIndex, survey: surveyList)
+                surveyList.removeAll()
+            } else {
+                presenter.stopLoadingIndicator()
+            }
         }
     }
     
@@ -39,7 +51,7 @@ final class NimbleSurveyInteractor: NimbleSurveyInteractorInterface {
         networkManager.fetch(modelType: AccessToken.self, request, { [weak self] (accessToken, response, error) in
             if let token = accessToken as? AccessToken {
                 let _ = self?.keyChainManager.deleteExpiredToken()
-                let saveToken: Bool = self?.keyChainManager.saveToken(token: token.accesstoken, key: "NimbleAccessToken") ?? false
+                let saveToken: Bool = self?.keyChainManager.saveToken(token: token.accesstoken, key: Constants.accessTokenKey) ?? false
                 (saveToken) ? self?.getSurveyList() : print("")
             } else {
             }
@@ -47,27 +59,61 @@ final class NimbleSurveyInteractor: NimbleSurveyInteractorInterface {
     }
     
     func getSurveyList() {
-        if let accessToken = keyChainManager.fetchToken(tokenKey: "NimbleAccessToken") {
-            getListUsing(accessToken: accessToken)
+        let existSurveyList =  surveyListInPage.filter { $0.0 == paginationIndex }
+        if existSurveyList.isEmpty {
+            if let accessToken = keyChainManager.fetchToken(tokenKey: "NimbleAccessToken") {
+                getListUsing(accessToken: accessToken)
+            } else {
+                getAccessToken()
+            }
         } else {
-            getAccessToken()
+            if let list = existSurveyList.first?.1 {
+                self.presenter.presentSurveyList(pageNumber: paginationIndex, survey: list)
+            }
         }
     }
     
     private func getListUsing(accessToken: String) {
-        if let accessToken = keyChainManager.fetchToken(tokenKey: "NimbleAccessToken") {
-            let request = Request(parameters: .url(["page": "1", "per_page": "1"]), endPoint: Constants.surveyEndPoint, headers: accessToken, httpMethod: .GET)
-            networkManager.fetchList(modelType: Survey.self, request, {[weak self] (surveyList, response, error) in
-                if let list  = surveyList as? [Survey] {
-                    print(list)
+        if let accessToken = keyChainManager.fetchToken(tokenKey: Constants.accessTokenKey) {
+            let request = Request(parameters: .url(["page": "\(self.paginationIndex)", "per_page": "\(Constants.itemsPerPage)"]), endPoint: Constants.surveyEndPoint, headers: accessToken, httpMethod: .GET)
+            networkManager.fetchList(modelType: Survey.self, request, {[weak self] (surveylist, response, error) in
+                if let list  = surveylist as? [Survey] {
+                    if !list.isEmpty {
+                        self?.surveyList.append(contentsOf: list)
+                    } else {
+                        self?.paginationIndex = (((self?.fetchingNextPage) == true) ? ((self?.paginationIndex)! - 1) : (self?.paginationIndex))!
+                        self?.presenter.stopLoadingIndicator()
+                    }
                 } else {
                     if (response as? HTTPURLResponse)?.statusCode == 400 {
                         self?.getAccessToken()
                     } else {
-                        
+                        self?.paginationIndex = (((self?.fetchingNextPage) == true) ? ((self?.paginationIndex)! - 1) : (self?.paginationIndex))!
                     }
                 }
             })
+        }
+    }
+    
+    func getNextPage() {
+        paginationIndex += 1
+        fetchingNextPage = true
+        getSurveyList()
+    }
+    
+    func getRefreshData() {
+        surveyListInPage.removeAll()
+        paginationIndex = 1
+        getSurveyList()
+    }
+    
+    func getPreviousPageSurveyList() {
+        if paginationIndex > 1 {
+            paginationIndex -= 1
+            getSurveyList()
+        } else {
+            paginationIndex = 1
+            presenter.stopLoadingIndicator()
         }
     }
 }

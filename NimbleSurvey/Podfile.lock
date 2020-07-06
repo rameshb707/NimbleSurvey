@@ -1,16 +1,22 @@
 PODS:
+  - Kingfisher (5.14.0):
+    - Kingfisher/Core (= 5.14.0)
+  - Kingfisher/Core (5.14.0)
   - SwiftKeychainWrapper (3.4.0)
 
 DEPENDENCIES:
+  - Kingfisher
   - SwiftKeychainWrapper
 
 SPEC REPOS:
   trunk:
+    - Kingfisher
     - SwiftKeychainWrapper
 
 SPEC CHECKSUMS:
+  Kingfisher: 7b64389a43139c903ec434788344c288217c792d
   SwiftKeychainWrapper: 6fc49fbf7d4a6b0772917acb0e53a1639f6078d6
 
-PODFILE CHECKSUM: 38d9444700337ed1ee8a63ec6da859fd75e505f7
+PODFILE CHECKSUM: 2d3a1045652c2e181a4c0aa67f58540f6f4fd914
 
 COCOAPODS: 1.9.3
