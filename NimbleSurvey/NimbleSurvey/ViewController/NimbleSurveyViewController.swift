@@ -33,11 +33,14 @@ class NimbleSurveyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        
         NimbleSurveyConfigurator.sharedInstance.configure(viewController: self)
         self.presenter.getSurvey()
+        
         registerNib()
         addTapGesture()
-        indexTableView.isUserInteractionEnabled = false
+        indexTableView?.isUserInteractionEnabled = false
         self.navigationController?.navigationBar.topItem?.title = "SURVEYS"
     }
     
@@ -46,7 +49,7 @@ class NimbleSurveyViewController: UIViewController {
         constructCollectionViewCellLayout()
     }
     
-    func constructCollectionViewCellLayout() {
+    private func constructCollectionViewCellLayout() {
         var cellSize: CGSize = CGSize()
         if #available(iOS 11.0, *) {
             cellSize = CGSize(width:nimbleSurveyCollectionView.frame.size.width , height:self.view.frame.size.height - self.view.safeAreaInsets.bottom - (self.navigationController?.navigationBar.frame.size.height ?? 0))
@@ -54,7 +57,6 @@ class NimbleSurveyViewController: UIViewController {
         } else {
             cellSize = CGSize(width:nimbleSurveyCollectionView.frame.size.width , height:self.view.frame.size.height  - (self.navigationController?.navigationBar.frame.size.height ?? 0))
         }
-        
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.itemSize = cellSize
@@ -64,18 +66,18 @@ class NimbleSurveyViewController: UIViewController {
         nimbleSurveyCollectionView.setCollectionViewLayout(layout, animated: true)
     }
     
-    func addTapGesture() {
+    private func addTapGesture() {
         let swipeUpGesture = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeUp))
         swipeUpGesture.direction = UISwipeGestureRecognizer.Direction.up
-        self.nimbleSurveyCollectionView.addGestureRecognizer(swipeUpGesture)
+        self.nimbleSurveyCollectionView?.addGestureRecognizer(swipeUpGesture)
         
         let swipeDownGesture = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeDown))
         swipeDownGesture.direction = .down
-        self.nimbleSurveyCollectionView.addGestureRecognizer(swipeDownGesture)
+        self.nimbleSurveyCollectionView?.addGestureRecognizer(swipeDownGesture)
     }
     
     private func registerNib() {
-        nimbleSurveyCollectionView.register(UINib(nibName: NimbleSurveyCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: NimbleSurveyCollectionViewCell.identifier)
+        nimbleSurveyCollectionView?.register(UINib(nibName: NimbleSurveyCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: NimbleSurveyCollectionViewCell.identifier)
     }
     
     @IBAction func refreshButton(_ sender: Any) {
@@ -83,6 +85,7 @@ class NimbleSurveyViewController: UIViewController {
     }
 }
 
+// MARK: UICollectionViewDataSource and UICollectionViewDelegate
 extension NimbleSurveyViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return surveyList.count
@@ -91,11 +94,13 @@ extension NimbleSurveyViewController: UICollectionViewDataSource, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NimbleSurveyCollectionViewCell.identifier, for: indexPath) as? NimbleSurveyCollectionViewCell
         print(indexPath)
+        cell?.delegate = self
         cell?.configureCell(survey: surveyList[initialSwipeIndex])
         return cell!
     }
 }
 
+// MARK: UITableViewDelegate and UITableViewDataSource
 extension NimbleSurveyViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return surveyList.count
@@ -110,7 +115,6 @@ extension NimbleSurveyViewController: UITableViewDelegate, UITableViewDataSource
         cell.layer.cornerRadius = 10
         cell.layer.borderWidth = 3
         cell.layer.borderColor = UIColor.white.cgColor
-
         return cell
     }
     
@@ -129,6 +133,7 @@ extension NimbleSurveyViewController: UITableViewDelegate, UITableViewDataSource
     }
 }
 
+// MARK: Survye Display
 extension NimbleSurveyViewController: NimbleSurveyView {
     func displaySurvey(pageNumber: Int, list: [Survey]) {
         self.pageNumber.title = "Page \(pageNumber)"
@@ -140,15 +145,16 @@ extension NimbleSurveyViewController: NimbleSurveyView {
     }
     
     func startLoadingIndicator() {
-        self.loadingIndicator.isHidden = false
-        self.loadingIndicator.startAnimating()
+        self.loadingIndicator?.isHidden = false
+        self.loadingIndicator?.startAnimating()
     }
     
     func stopLoadingIndicator() {
-        self.loadingIndicator.stopAnimating()
+        self.loadingIndicator?.stopAnimating()
     }
 }
 
+// MARK: Survey Page Swipe Handle
 extension NimbleSurveyViewController {
     @objc func swipeUp() {
         initialSwipeIndex = initialSwipeIndex + 1
@@ -169,6 +175,14 @@ extension NimbleSurveyViewController {
         } else {
         nimbleSurveyCollectionView.scrollToItem(at: IndexPath(item: initialSwipeIndex, section: 0), at: UICollectionView.ScrollPosition.centeredVertically, animated: true)
         indexTableView.selectRow(at: IndexPath(row: 0, section: initialSwipeIndex), animated: true, scrollPosition: .none)
+        }
+    }
+}
+
+extension NimbleSurveyViewController: OnClickSurveyDelegate {
+    func takeASurvey() {
+        if let navigationController = self.navigationController {
+            self.presenter.presentTakeASurveyPage(navigationController: navigationController)
         }
     }
 }

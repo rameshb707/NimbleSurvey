@@ -27,7 +27,7 @@
         <!--Nimble Survey View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="NimbleSurveyViewController" customModule="NimbleSurvey" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NimbleSurveyViewController" id="BYZ-38-t0r" customClass="NimbleSurveyViewController" customModule="NimbleSurvey" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -92,7 +92,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="OC9-3u-fCm">
-                        <barButtonItem key="leftBarButtonItem" image="icons8-refresh-40" id="2RK-5L-9lS">
+                        <barButtonItem key="leftBarButtonItem" image="Refresh_icon" id="2RK-5L-9lS">
                             <color key="tintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="refreshButton:" destination="BYZ-38-t0r" id="eIE-Ix-3yt"/>
@@ -114,8 +114,23 @@
             </objects>
             <point key="canvasLocation" x="471.01449275362324" y="104.46428571428571"/>
         </scene>
+        <!--TakeA Survey View Controller-->
+        <scene sceneID="8rW-5M-W88">
+            <objects>
+                <viewController storyboardIdentifier="TakeASurveyViewController" id="tpj-5z-PYN" customClass="TakeASurveyViewController" customModule="NimbleSurvey" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="f5T-4w-tZv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="zIk-fK-QSv"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mNb-pR-Kqg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1215" y="92"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="icons8-refresh-40" width="25" height="25"/>
+        <image name="Refresh_icon" width="25" height="25"/>
     </resources>
 </document>

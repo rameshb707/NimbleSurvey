@@ -13,6 +13,7 @@ struct AccessToken: Codable {
     var tokenType: String?
     var expiresIn: Double?
     var createdAt: Double?
+    
     enum CodingKeys: String, CodingKey {
         case accesstoken = "access_token"
         case tokenType = "token_type"
@@ -26,6 +27,5 @@ struct AccessToken: Codable {
         tokenType = try values.decode(String.self, forKey: .tokenType)
         expiresIn = try values.decode(Double.self, forKey: .expiresIn)
         createdAt = try values.decode(Double.self, forKey: .createdAt)
-        
     }
 }

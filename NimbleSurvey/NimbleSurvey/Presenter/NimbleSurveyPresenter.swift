@@ -6,7 +6,7 @@
 //  Copyright © 2020 Ramesh B. All rights reserved.
 //
 
-import Foundation
+import UIKit
 /// The interface which helps to communicate between interactor and the view
 protocol NimbelSurveyPresenterInterface: class {
     func getSurvey()
@@ -15,13 +15,14 @@ protocol NimbelSurveyPresenterInterface: class {
     func fetchNewDataByRefresh()
     func fetchPreviousData()
     func stopLoadingIndicator()
+    func presentTakeASurveyPage(navigationController: UINavigationController)
 }
 
-/// The responsibility of this presenter is to listen from the user interaction and call interactor to perform bussines loic  and display the content which is avalibale from the interactor to view
+/// The responsibility of this presenter is to listen from the user interaction and call interactor to perform bussines loic  and display the content which is avalibale from the presenter to view
 class NimbleSurveyPresenter: NimbelSurveyPresenterInterface {
-     weak var viewController: NimbleSurveyView!
-     var interactor: NimbleSurveyInteractorInterface!
-    
+    weak var viewController: NimbleSurveyView!
+    var interactor: NimbleSurveyInteractorInterface!
+    var router: NimbleSurveyRouter!
     func getSurvey() {
         interactor.getSurveyList()
         viewController.startLoadingIndicator()
@@ -31,7 +32,7 @@ class NimbleSurveyPresenter: NimbelSurveyPresenterInterface {
         interactor.getNextPage()
         viewController.startLoadingIndicator()
     }
-
+    
     func fetchPreviousData() {
         interactor.getPreviousPageSurveyList()
         viewController.startLoadingIndicator()
@@ -55,5 +56,9 @@ class NimbleSurveyPresenter: NimbelSurveyPresenterInterface {
         DispatchQueue.main.async {
             self.viewController.stopLoadingIndicator()
         }
+    }
+    
+    func presentTakeASurveyPage(navigationController: UINavigationController) {
+        router.navigateToTakeASurveyPage(navigationController: navigationController)
     }
 }

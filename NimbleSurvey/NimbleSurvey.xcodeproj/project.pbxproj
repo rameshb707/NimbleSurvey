@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C5FF12024B3591E002131DE /* NimbleSurveyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5FF11F24B3591E002131DE /* NimbleSurveyRouter.swift */; };
+		4C5FF12224B360BB002131DE /* TakeASurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5FF12124B360BB002131DE /* TakeASurveyViewController.swift */; };
+		4C5FF12424B36A1A002131DE /* KeyChainManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5FF12324B36A1A002131DE /* KeyChainManagerTests.swift */; };
+		4C5FF12524B3739E002131DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CEDA01824AEEA3B0012C2C0 /* Main.storyboard */; };
 		4C8C314324AF0BBF00C17417 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8C314224AF0BBF00C17417 /* AccessToken.swift */; };
 		4C8C314524AF136300C17417 /* Survey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8C314424AF136300C17417 /* Survey.swift */; };
 		4C8C314D24B081D500C17417 /* NimbleSurveyInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8C314C24B081D500C17417 /* NimbleSurveyInteractor.swift */; };
@@ -46,6 +50,9 @@
 		1E6BC3A5985D72D0F1D9CBF5 /* Pods-NimbleSurvey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleSurvey.debug.xcconfig"; path = "Target Support Files/Pods-NimbleSurvey/Pods-NimbleSurvey.debug.xcconfig"; sourceTree = "<group>"; };
 		405B0D9EC36EFD3D6CEECF58 /* Pods-NimbleSurvey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleSurvey.release.xcconfig"; path = "Target Support Files/Pods-NimbleSurvey/Pods-NimbleSurvey.release.xcconfig"; sourceTree = "<group>"; };
 		48FD41AB9CB6B2D8DB46CB71 /* Pods-NimbleSurveyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbleSurveyTests.debug.xcconfig"; path = "Target Support Files/Pods-NimbleSurveyTests/Pods-NimbleSurveyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4C5FF11F24B3591E002131DE /* NimbleSurveyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NimbleSurveyRouter.swift; sourceTree = "<group>"; };
+		4C5FF12124B360BB002131DE /* TakeASurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeASurveyViewController.swift; sourceTree = "<group>"; };
+		4C5FF12324B36A1A002131DE /* KeyChainManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainManagerTests.swift; sourceTree = "<group>"; };
 		4C8C314224AF0BBF00C17417 /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		4C8C314424AF136300C17417 /* Survey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Survey.swift; sourceTree = "<group>"; };
 		4C8C314C24B081D500C17417 /* NimbleSurveyInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NimbleSurveyInteractor.swift; sourceTree = "<group>"; };
@@ -161,6 +168,7 @@
 		4C8C314B24B0815F00C17417 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				4C5FF11F24B3591E002131DE /* NimbleSurveyRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -169,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				4C8C315424B0876700C17417 /* NimbleSurveyViewController.swift */,
+				4C5FF12124B360BB002131DE /* TakeASurveyViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -219,6 +228,7 @@
 			children = (
 				4CEDA02924AEEA3E0012C2C0 /* NimbleSurveyTests.swift */,
 				4CEDA02B24AEEA3E0012C2C0 /* Info.plist */,
+				4C5FF12324B36A1A002131DE /* KeyChainManagerTests.swift */,
 			);
 			path = NimbleSurveyTests;
 			sourceTree = "<group>";
@@ -339,6 +349,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C5FF12524B3739E002131DE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +433,8 @@
 				4C8C315724B167B400C17417 /* KeyChainManager.swift in Sources */,
 				4CEDA04524AF02420012C2C0 /* NetworkManager.swift in Sources */,
 				4CEDA04724AF02420012C2C0 /* URLRequestExtension.swift in Sources */,
+				4C5FF12224B360BB002131DE /* TakeASurveyViewController.swift in Sources */,
+				4C5FF12024B3591E002131DE /* NimbleSurveyRouter.swift in Sources */,
 				4C8C314524AF136300C17417 /* Survey.swift in Sources */,
 				4C8C315324B0838900C17417 /* NimbleSurveyConfigurator.swift in Sources */,
 				4CE61BDC24B1DB24005CB41F /* NimbleSurveyCollectionViewCell.swift in Sources */,
@@ -436,6 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CEDA02A24AEEA3E0012C2C0 /* NimbleSurveyTests.swift in Sources */,
+				4C5FF12424B36A1A002131DE /* KeyChainManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

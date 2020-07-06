@@ -10,25 +10,37 @@ import XCTest
 @testable import NimbleSurvey
 
 class NimbleSurveyTests: XCTestCase {
+    var nimbleSurveyViewController: NimbleSurveyViewController!
 
-    override func setUpWithError() throws {
+    override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        super.setUp()
+        setUpViewController()
     }
 
-    override func tearDownWithError() throws {
+    override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        nimbleSurveyViewController = nil
+
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    private func setUpViewController() {
+         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+         let navigation = storyboard.instantiateViewController(withIdentifier: "NavigationController") as? UINavigationController
+        nimbleSurveyViewController = navigation?.topViewController as? NimbleSurveyViewController
+         nimbleSurveyViewController.viewDidLoad()
+         let _ = nimbleSurveyViewController?.view
+         nimbleSurveyViewController?.viewWillAppear(false)
+         
+     }
+    
+    func testSurveyView() {
+        XCTAssertNotNil(nimbleSurveyViewController.indexTableView)
+        XCTAssertNotNil(nimbleSurveyViewController.nimbleSurveyCollectionView)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testExample() {
+       
     }
 
 }

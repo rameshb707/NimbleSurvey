@@ -9,7 +9,9 @@
 import Foundation
 import SwiftKeychainWrapper
 
+// This is wrapper for the app to store and fetch the confidential and serured information in the KeyChain
 class KeyChainManager: NSObject {
+    
     static let sharedInstance = KeyChainManager()
     private override init() {}
     
@@ -28,6 +30,4 @@ class KeyChainManager: NSObject {
     func deleteExpiredToken() -> Bool {
         return KeychainWrapper.standard.removeAllKeys()
     }
-    
-    
 }

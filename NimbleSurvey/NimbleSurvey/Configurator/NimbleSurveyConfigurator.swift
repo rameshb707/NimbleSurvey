@@ -17,14 +17,16 @@ final class NimbleSurveyConfigurator {
 
     // MARK: - Configuration
     func configure(viewController: NimbleSurveyViewController) {
-
-      let presenter = NimbleSurveyPresenter()
-      viewController.presenter = presenter
-      presenter.viewController = viewController
-
-      let interactor = NimbleSurveyInteractor()
-      presenter.interactor = interactor
-      interactor.presenter = presenter
-
+        
+        let presenter = NimbleSurveyPresenter()
+        viewController.presenter = presenter
+        presenter.viewController = viewController
+        
+        let interactor = NimbleSurveyInteractor()
+        presenter.interactor = interactor
+        interactor.presenter = presenter
+        
+        let router = NimbleSurveyRouter()
+        presenter.router = router
     }
 }
