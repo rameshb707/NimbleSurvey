@@ -16,6 +16,7 @@ protocol NimbelSurveyPresenterInterface: class {
     func fetchPreviousData()
     func stopLoadingIndicator()
     func presentTakeASurveyPage(navigationController: UINavigationController)
+    func authenticationError()
 }
 
 /// The responsibility of this presenter is to listen from the user interaction and call interactor to perform bussines loic  and display the content which is avalibale from the presenter to view
@@ -60,5 +61,9 @@ class NimbleSurveyPresenter: NimbelSurveyPresenterInterface {
     
     func presentTakeASurveyPage(navigationController: UINavigationController) {
         router.navigateToTakeASurveyPage(navigationController: navigationController)
+    }
+    
+    func authenticationError() {
+        
     }
 }

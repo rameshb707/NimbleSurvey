@@ -25,24 +25,23 @@ protocol NimbleSurveyInteractorInterface: class {
 final class NimbleSurveyInteractor: NimbleSurveyInteractorInterface {
     
     weak var presenter: NimbelSurveyPresenterInterface!
+    var worker = NimbleSurveyWorker()
     var surveyList: [Survey] = [Survey]() {
         didSet {
             if !surveyList.isEmpty {
                 surveyListInPage.append((self.paginationIndex, surveyList))
-                self.presenter.presentSurveyList(pageNumber: paginationIndex, survey: surveyList)
+                self.presenter?.presentSurveyList(pageNumber: paginationIndex, survey: surveyList)
                 surveyList.removeAll()
             } else {
                 presenter.stopLoadingIndicator()
             }
         }
     }
+    
     // MARK: Private Properties
-    private var paginationIndex: Int = 1
-    private var surveyListInPage: [(Int, [Survey])]  = [(Int, [Survey])]()
-    private var fetchingNextPage: Bool = false
-    private lazy var networkManager: NetworkManager = {
-        return NetworkManager()
-    }()
+    var paginationIndex: Int = 1
+    var surveyListInPage: [(Int, [Survey])]  = [(Int, [Survey])]()
+    var fetchingNextPage: Bool = false
     
     let keyChainManager = KeyChainManager.sharedInstance
     
@@ -79,45 +78,54 @@ final class NimbleSurveyInteractor: NimbleSurveyInteractorInterface {
             getSurveyList()
         } else {
             paginationIndex = 1
-            presenter.stopLoadingIndicator()
+            presenter?.stopLoadingIndicator()
         }
     }
     
     // MARK: Private Methods
-    private func getAccessToken() {
+    func getAccessToken() {
         let request = Request(parameters: .url(["username": "carlos@nimbl3.com", "grant_type": "password", "password": "antikera"]), endPoint: Constants.loginEndPoint, headers: nil, httpMethod: .POST)
-        networkManager.fetch(modelType: AccessToken.self, request, { [weak self]
-            (accessToken, response, error) in
+        worker.getAccessToken(request: request) { [weak self] (accessToken, error) in
             guard let strongSelf = self else { return }
-            if let token = accessToken as? AccessToken {
-                let _ = self?.keyChainManager.deleteExpiredToken()
-                let saveToken: Bool = strongSelf.keyChainManager.saveToken(token: token.accesstoken, key: Constants.accessTokenKey)
-                (saveToken) ? strongSelf.getSurveyList() : print("")
-            } else {
-            }
-        })
+            strongSelf.handleAccessToken(accessToken: accessToken, error: error)
+        }
     }
     
-    private func getListUsing(accessToken: String) {
+    func handleAccessToken(accessToken: AccessToken?, error: Error?) {
+        if let token = accessToken {
+            let _ = self.keyChainManager.deleteExpiredToken()
+            let saveToken: Bool = self.keyChainManager.saveToken(token: token.accesstoken, key: Constants.accessTokenKey)
+            (saveToken) ? self.getSurveyList() : print("")
+        } else {
+            self.presenter.authenticationError()
+        }
+    }
+    
+    func getListUsing(accessToken: String) {
         if let accessToken = keyChainManager.fetchToken(tokenKey: Constants.accessTokenKey) {
-            let request = Request(parameters: .url(["page": "\(self.paginationIndex)", "per_page": "\(Constants.itemsPerPage)"]), endPoint: Constants.surveyEndPoint, headers: accessToken, httpMethod: .GET)
-            networkManager.fetchList(modelType: Survey.self, request, {[weak self] (surveylist, response, error) in
+            let request = Request(parameters: .url(["page": "\(self.paginationIndex)", "per_page": "\(itemsPerPage)"]), endPoint: Constants.surveyEndPoint, headers: accessToken, httpMethod: .GET)
+            worker.getSurveyList(request: request, completionHandler: { [weak self] (surveylist, response, error) in
                 guard let strongSelf = self else { return }
-                if let list  = surveylist as? [Survey] {
-                    if !list.isEmpty {
-                        strongSelf.surveyList.append(contentsOf: list)
-                    } else {
-                        strongSelf.paginationIndex = (((self?.fetchingNextPage) == true) ? ((self?.paginationIndex)! - 1) : (self?.paginationIndex))!
-                        self?.presenter.stopLoadingIndicator()
-                    }
-                } else {
-                    if (response as? HTTPURLResponse)?.statusCode == 400 {
-                        self?.getAccessToken()
-                    } else {
-                        self?.paginationIndex = (((self?.fetchingNextPage) == true) ? ((self?.paginationIndex)! - 1) : (self?.paginationIndex))!
-                    }
-                }
+                strongSelf.handledFetchedList(surveylist: surveylist, response: response, error: error)
             })
+        }
+    }
+    
+    func handledFetchedList( surveylist: [Survey]?, response: URLResponse?, error: Error?) {
+        if let list  = surveylist {
+            if !list.isEmpty {
+                self.surveyList.append(contentsOf: list)
+            } else {
+                self.paginationIndex = (((self.fetchingNextPage) == true) ? ((self.paginationIndex) - 1) : (self.paginationIndex))
+                self.presenter?.stopLoadingIndicator()
+            }
+        } else {
+            if (response as? HTTPURLResponse)?.statusCode == 400 {
+                self.getAccessToken()
+            } else {
+                self.paginationIndex = (((self.fetchingNextPage) == true) ? ((self.paginationIndex) - 1) : (self.paginationIndex))
+                self.presenter?.authenticationError()
+            }
         }
     }
 }

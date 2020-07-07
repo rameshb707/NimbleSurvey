@@ -20,12 +20,4 @@ struct AccessToken: Codable {
         case expiresIn = "expires_in"
         case createdAt = "created_at"
     }
-    
-    init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-        accesstoken = try values.decode(String.self, forKey: .accesstoken)
-        tokenType = try values.decode(String.self, forKey: .tokenType)
-        expiresIn = try values.decode(Double.self, forKey: .expiresIn)
-        createdAt = try values.decode(Double.self, forKey: .createdAt)
-    }
 }

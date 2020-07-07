@@ -11,6 +11,7 @@
 		4C5FF12224B360BB002131DE /* TakeASurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5FF12124B360BB002131DE /* TakeASurveyViewController.swift */; };
 		4C5FF12424B36A1A002131DE /* KeyChainManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5FF12324B36A1A002131DE /* KeyChainManagerTests.swift */; };
 		4C5FF12524B3739E002131DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CEDA01824AEEA3B0012C2C0 /* Main.storyboard */; };
+		4C5FF12724B49F96002131DE /* NimbleSurveyWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5FF12624B49F96002131DE /* NimbleSurveyWorker.swift */; };
 		4C8C314324AF0BBF00C17417 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8C314224AF0BBF00C17417 /* AccessToken.swift */; };
 		4C8C314524AF136300C17417 /* Survey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8C314424AF136300C17417 /* Survey.swift */; };
 		4C8C314D24B081D500C17417 /* NimbleSurveyInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8C314C24B081D500C17417 /* NimbleSurveyInteractor.swift */; };
@@ -53,6 +54,7 @@
 		4C5FF11F24B3591E002131DE /* NimbleSurveyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NimbleSurveyRouter.swift; sourceTree = "<group>"; };
 		4C5FF12124B360BB002131DE /* TakeASurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeASurveyViewController.swift; sourceTree = "<group>"; };
 		4C5FF12324B36A1A002131DE /* KeyChainManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainManagerTests.swift; sourceTree = "<group>"; };
+		4C5FF12624B49F96002131DE /* NimbleSurveyWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NimbleSurveyWorker.swift; sourceTree = "<group>"; };
 		4C8C314224AF0BBF00C17417 /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		4C8C314424AF136300C17417 /* Survey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Survey.swift; sourceTree = "<group>"; };
 		4C8C314C24B081D500C17417 /* NimbleSurveyInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NimbleSurveyInteractor.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 		4C8C314724B080FF00C17417 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				4C5FF12624B49F96002131DE /* NimbleSurveyWorker.swift */,
 				4C8C314C24B081D500C17417 /* NimbleSurveyInteractor.swift */,
 			);
 			path = Interactor;
@@ -436,6 +439,7 @@
 				4C5FF12224B360BB002131DE /* TakeASurveyViewController.swift in Sources */,
 				4C5FF12024B3591E002131DE /* NimbleSurveyRouter.swift in Sources */,
 				4C8C314524AF136300C17417 /* Survey.swift in Sources */,
+				4C5FF12724B49F96002131DE /* NimbleSurveyWorker.swift in Sources */,
 				4C8C315324B0838900C17417 /* NimbleSurveyConfigurator.swift in Sources */,
 				4CE61BDC24B1DB24005CB41F /* NimbleSurveyCollectionViewCell.swift in Sources */,
 				4CEDA03F24AEF1CE0012C2C0 /* Constants.swift in Sources */,

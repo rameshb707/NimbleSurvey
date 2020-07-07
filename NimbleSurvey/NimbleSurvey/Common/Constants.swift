@@ -17,7 +17,7 @@ struct Constants {
     static let accessTokenKey: String = "NimbleAccessToken"
     static let indexTableViewHeight: CGFloat = 20
     static let tableViewFootterHeight: CGFloat = 5
-    static let itemsPerPage: Int = 10
-
 }
+
+var itemsPerPage: Int = 10
 

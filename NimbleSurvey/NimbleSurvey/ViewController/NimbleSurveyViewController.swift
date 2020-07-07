@@ -12,6 +12,7 @@ protocol NimbleSurveyView :class{
     func displaySurvey(pageNumber: Int, list: [Survey])
     func startLoadingIndicator()
     func stopLoadingIndicator()
+    func loginError()
 }
 class NimbleSurveyViewController: UIViewController {
     // MARK: Outlets
@@ -24,6 +25,7 @@ class NimbleSurveyViewController: UIViewController {
     // MARK: Properties
     var presenter: NimbelSurveyPresenterInterface!
     var initialSwipeIndex: Int = 0
+    var cellSize: CGSize = CGSize()
     var surveyList: [Survey]  = [Survey]() {
         didSet {
             nimbleSurveyCollectionView.reloadData()
@@ -33,37 +35,44 @@ class NimbleSurveyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
         NimbleSurveyConfigurator.sharedInstance.configure(viewController: self)
         self.presenter.getSurvey()
         
         registerNib()
         addTapGesture()
+        constructCollectionViewCellLayout()
         indexTableView?.isUserInteractionEnabled = false
         self.navigationController?.navigationBar.topItem?.title = "SURVEYS"
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.barTintColor = UIColor.black
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        nimbleSurveyCollectionView?.scrollToItem(at: IndexPath(item: initialSwipeIndex, section: 0), at: UICollectionView.ScrollPosition.centeredVertically, animated: true)
+        navigationController?.navigationBar.barStyle = .black
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        constructCollectionViewCellLayout()
+        if #available(iOS 11.0, *) {
+            cellSize = CGSize(width:UIScreen.main.bounds.size.width , height:UIScreen.main.bounds.size.height - self.view.safeAreaInsets.bottom - (self.navigationController?.navigationBar.frame.size.height ?? 0))
+            
+        } else {
+            cellSize = CGSize(width:self.view.frame.size.width , height:self.view.frame.size.height  - (self.navigationController?.navigationBar.frame.size.height ?? 0))
+        }
     }
     
     private func constructCollectionViewCellLayout() {
-        var cellSize: CGSize = CGSize()
-        if #available(iOS 11.0, *) {
-            cellSize = CGSize(width:nimbleSurveyCollectionView.frame.size.width , height:self.view.frame.size.height - self.view.safeAreaInsets.bottom - (self.navigationController?.navigationBar.frame.size.height ?? 0))
-            
-        } else {
-            cellSize = CGSize(width:nimbleSurveyCollectionView.frame.size.width , height:self.view.frame.size.height  - (self.navigationController?.navigationBar.frame.size.height ?? 0))
-        }
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        layout.itemSize = cellSize
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         layout.minimumLineSpacing = 1.0
         layout.minimumInteritemSpacing = 1.0
-        nimbleSurveyCollectionView.setCollectionViewLayout(layout, animated: true)
+        nimbleSurveyCollectionView?.setCollectionViewLayout(layout, animated: true)
     }
     
     private func addTapGesture() {
@@ -97,6 +106,10 @@ extension NimbleSurveyViewController: UICollectionViewDataSource, UICollectionVi
         cell?.delegate = self
         cell?.configureCell(survey: surveyList[initialSwipeIndex])
         return cell!
+    }
+    
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+            return cellSize
     }
 }
 
@@ -139,6 +152,7 @@ extension NimbleSurveyViewController: NimbleSurveyView {
         self.pageNumber.title = "Page \(pageNumber)"
         self.surveyList.removeAll()
         self.surveyList.append(contentsOf: list)
+        initialSwipeIndex = list.isEmpty ? (initialSwipeIndex - 1) : 0
         tableViewHeightConstraint.constant = CGFloat(surveyList.count) * (Constants.indexTableViewHeight + Constants.tableViewFootterHeight)
         indexTableView.selectRow(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .none)
         nimbleSurveyCollectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .centeredVertically, animated: true)
@@ -152,6 +166,11 @@ extension NimbleSurveyViewController: NimbleSurveyView {
     func stopLoadingIndicator() {
         self.loadingIndicator?.stopAnimating()
     }
+    
+    func loginError() {
+
+    }
+    
 }
 
 // MARK: Survey Page Swipe Handle
@@ -159,7 +178,6 @@ extension NimbleSurveyViewController {
     @objc func swipeUp() {
         initialSwipeIndex = initialSwipeIndex + 1
         if initialSwipeIndex > surveyList.count - 1 {
-            initialSwipeIndex = 0
             self.presenter.fetchMoreData()
         } else {
         nimbleSurveyCollectionView.scrollToItem(at: IndexPath(item: initialSwipeIndex, section: 0), at: UICollectionView.ScrollPosition.centeredVertically, animated: true)
