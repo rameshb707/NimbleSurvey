@@ -6,6 +6,8 @@ target 'NimbleSurvey' do
   use_frameworks!
 
   # Pods for NimbleSurvey
+  pod 'SwiftKeychainWrapper'
+  pod 'Kingfisher'
 
   target 'NimbleSurveyTests' do
     inherit! :search_paths
