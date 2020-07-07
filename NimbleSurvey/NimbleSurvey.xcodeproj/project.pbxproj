@@ -125,6 +125,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		4C5FF12824B4B176002131DE /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				4C5FF12624B49F96002131DE /* NimbleSurveyWorker.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
 		4C8C314124AF0B9D00C17417 /* Modal */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,7 +154,6 @@
 		4C8C314724B080FF00C17417 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				4C5FF12624B49F96002131DE /* NimbleSurveyWorker.swift */,
 				4C8C314C24B081D500C17417 /* NimbleSurveyInteractor.swift */,
 			);
 			path = Interactor;
@@ -208,6 +215,7 @@
 		4CEDA01124AEEA3B0012C2C0 /* NimbleSurvey */ = {
 			isa = PBXGroup;
 			children = (
+				4C5FF12824B4B176002131DE /* Worker */,
 				4C8C315824B1D96000C17417 /* ViewController */,
 				4C8C314B24B0815F00C17417 /* Router */,
 				4C8C314A24B0812F00C17417 /* Configurator */,

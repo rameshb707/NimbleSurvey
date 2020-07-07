@@ -13,6 +13,7 @@ protocol NimbleSurveyView :class{
     func startLoadingIndicator()
     func stopLoadingIndicator()
     func loginError()
+    func surveyListError()
 }
 class NimbleSurveyViewController: UIViewController {
     // MARK: Outlets
@@ -33,18 +34,18 @@ class NimbleSurveyViewController: UIViewController {
         }
     }
     
+    // MARK: Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         NimbleSurveyConfigurator.sharedInstance.configure(viewController: self)
         self.presenter.getSurvey()
         
         registerNib()
         addTapGesture()
+        setUpNavigationBar()
         constructCollectionViewCellLayout()
         indexTableView?.isUserInteractionEnabled = false
-        self.navigationController?.navigationBar.topItem?.title = "SURVEYS"
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        self.navigationController?.navigationBar.barTintColor = UIColor.black
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -53,18 +54,27 @@ class NimbleSurveyViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        nimbleSurveyCollectionView?.scrollToItem(at: IndexPath(item: initialSwipeIndex, section: 0), at: UICollectionView.ScrollPosition.centeredVertically, animated: true)
-        navigationController?.navigationBar.barStyle = .black
+        if !surveyList.isEmpty {
+            nimbleSurveyCollectionView?.scrollToItem(at: IndexPath(item: initialSwipeIndex, section: 0), at: UICollectionView.ScrollPosition.centeredVertically, animated: true)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if #available(iOS 11.0, *) {
-            cellSize = CGSize(width:UIScreen.main.bounds.size.width , height:UIScreen.main.bounds.size.height - self.view.safeAreaInsets.bottom - (self.navigationController?.navigationBar.frame.size.height ?? 0))
+            cellSize = CGSize(width:UIScreen.main.bounds.size.width , height:UIScreen.main.bounds.size.height - self.view.safeAreaInsets.bottom - 20 - (self.navigationController?.navigationBar.frame.size.height ?? 0))
             
         } else {
             cellSize = CGSize(width:self.view.frame.size.width , height:self.view.frame.size.height  - (self.navigationController?.navigationBar.frame.size.height ?? 0))
         }
+    }
+    
+    // MARK: Private Methods
+    private func setUpNavigationBar() {
+        self.navigationController?.navigationBar.topItem?.title = "SURVEYS"
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.barTintColor = UIColor.black
+        navigationController?.navigationBar.barStyle = .black
     }
     
     private func constructCollectionViewCellLayout() {
@@ -89,6 +99,7 @@ class NimbleSurveyViewController: UIViewController {
         nimbleSurveyCollectionView?.register(UINib(nibName: NimbleSurveyCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: NimbleSurveyCollectionViewCell.identifier)
     }
     
+    // MARK: Actions
     @IBAction func refreshButton(_ sender: Any) {
         presenter.fetchNewDataByRefresh()
     }
@@ -168,9 +179,18 @@ extension NimbleSurveyViewController: NimbleSurveyView {
     }
     
     func loginError() {
-
+        self.showAlertView(title: "Unable to Login", message: "Invalid Credentials")
     }
     
+    func surveyListError() {
+        self.showAlertView(title: "Something went wrong", message: "")
+    }
+    
+    func showAlertView (title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
 // MARK: Survey Page Swipe Handle

@@ -38,5 +38,4 @@ class NimbleSurveyCollectionViewCell: UICollectionViewCell {
     @IBAction func takeASurvey(_ sender: Any) {
         delegate?.takeASurvey()
     }
-    
 }

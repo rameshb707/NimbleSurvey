@@ -18,7 +18,7 @@ protocol EndPoint {
 
 }
 
-// MARK: - Contains supporting properties in order to construct the request.
+// Contains supporting properties in order to construct the request. Its basically a request builder for the network call
 struct Request: EndPoint {
     var parameters: APIParams?
 

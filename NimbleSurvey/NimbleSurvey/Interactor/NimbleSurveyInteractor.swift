@@ -38,13 +38,18 @@ final class NimbleSurveyInteractor: NimbleSurveyInteractorInterface {
         }
     }
     
-    // MARK: Private Properties
+    // MARK: Properties
     var paginationIndex: Int = 1
     var surveyListInPage: [(Int, [Survey])]  = [(Int, [Survey])]()
     var fetchingNextPage: Bool = false
     
     let keyChainManager = KeyChainManager.sharedInstance
     
+    /**
+     Initially checks whether it is available in the temperory list.
+         - If not it make new request to fetch the survey list by using valid accesstoken available in keychain.
+        - if there is not token then it will request for new accesstoken
+    */
     func getSurveyList() {
         let existSurveyList =  surveyListInPage.filter { $0.0 == paginationIndex }
         if existSurveyList.isEmpty {
@@ -82,7 +87,7 @@ final class NimbleSurveyInteractor: NimbleSurveyInteractorInterface {
         }
     }
     
-    // MARK: Private Methods
+    // MARK: Methods
     func getAccessToken() {
         let request = Request(parameters: .url(["username": "carlos@nimbl3.com", "grant_type": "password", "password": "antikera"]), endPoint: Constants.loginEndPoint, headers: nil, httpMethod: .POST)
         worker.getAccessToken(request: request) { [weak self] (accessToken, error) in
@@ -91,11 +96,14 @@ final class NimbleSurveyInteractor: NimbleSurveyInteractorInterface {
         }
     }
     
+    /**
+     Saves the new access token to the keychain
+     */
     func handleAccessToken(accessToken: AccessToken?, error: Error?) {
         if let token = accessToken {
             let _ = self.keyChainManager.deleteExpiredToken()
             let saveToken: Bool = self.keyChainManager.saveToken(token: token.accesstoken, key: Constants.accessTokenKey)
-            (saveToken) ? self.getSurveyList() : print("")
+            (saveToken) ? self.getSurveyList() : self.presenter.authenticationError()
         } else {
             self.presenter.authenticationError()
         }
@@ -111,6 +119,10 @@ final class NimbleSurveyInteractor: NimbleSurveyInteractorInterface {
         }
     }
     
+    /**
+     Handles the fetched survey list from the server and gives it to presenter to present on the UI
+     - If not the token might have been expired. so will get new access token and fetch again
+     */
     func handledFetchedList( surveylist: [Survey]?, response: URLResponse?, error: Error?) {
         if let list  = surveylist {
             if !list.isEmpty {
@@ -124,7 +136,7 @@ final class NimbleSurveyInteractor: NimbleSurveyInteractorInterface {
                 self.getAccessToken()
             } else {
                 self.paginationIndex = (((self.fetchingNextPage) == true) ? ((self.paginationIndex) - 1) : (self.paginationIndex))
-                self.presenter?.authenticationError()
+                self.presenter?.surveyListFecthingError()
             }
         }
     }

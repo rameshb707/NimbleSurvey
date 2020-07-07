@@ -17,13 +17,14 @@ protocol NimbelSurveyPresenterInterface: class {
     func stopLoadingIndicator()
     func presentTakeASurveyPage(navigationController: UINavigationController)
     func authenticationError()
+    func surveyListFecthingError()
 }
 
 /// The responsibility of this presenter is to listen from the user interaction and call interactor to perform bussines loic  and display the content which is avalibale from the presenter to view
 class NimbleSurveyPresenter: NimbelSurveyPresenterInterface {
     weak var viewController: NimbleSurveyView!
     var interactor: NimbleSurveyInteractorInterface!
-    var router: NimbleSurveyRouter!
+    var router: NimbleSurveyRouterInterface!
     func getSurvey() {
         interactor.getSurveyList()
         viewController.startLoadingIndicator()
@@ -64,6 +65,15 @@ class NimbleSurveyPresenter: NimbelSurveyPresenterInterface {
     }
     
     func authenticationError() {
-        
+        DispatchQueue.main.async {
+            self.viewController.loginError()
+        }
     }
+    
+    func surveyListFecthingError() {
+        DispatchQueue.main.async {
+            self.viewController.surveyListError()
+        }
+    }
+
 }
