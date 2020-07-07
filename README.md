@@ -1,6 +1,7 @@
 # NimbleSurvey App for iOS
 ===================
 This document currently covers all the information of the design Pattern.
+===================
 
 Prerequisite
 -------------
@@ -12,7 +13,7 @@ Prerequisite
 
 
 Project Structure
--------------
+-----------------
 > - The project is build by using VIPER Design Pattern.
 > - Used SwiftKeychainWrapper to store the token
 > - Used Kingfisher to cache the images
@@ -22,4 +23,7 @@ Code Coverage
 
 Achieved 71% of the entire project 
 
+Dynamic Survey Items 
+--------------------
 
+You can change the number of items per page.
