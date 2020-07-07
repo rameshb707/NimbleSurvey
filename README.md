@@ -1,5 +1,5 @@
 # NimbleSurvey App for iOS
-===================
+
 This document currently covers all the information of the design Pattern.
 ===================
 
